@@ -21,6 +21,7 @@ a {
     text-decoration: none;
 }
 
+/*清除页面浮动造成的盒子高度塌陷*/
 .clearfix:before, .clearfix:after {
     content: "";
     display: table;
@@ -90,6 +91,9 @@ a {
 
 .search input:focus {
     outline: none;
+    border: 1px solid #00a4ff;
+    border-right: none;
+    box-shadow: 3px 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 
 .search button {
@@ -98,6 +102,7 @@ a {
     height: 42px;
     background-color: #00a4ff;
     border: none;
+    cursor: pointer;
 }
 
 .search button:focus {
@@ -290,6 +295,7 @@ a {
     height: 270px;
     background-color: #fff;
     margin: 0 15px 15px 0;
+    cursor: pointer;
 }
 
 .box .box-bd ul li:hover {
@@ -370,8 +376,15 @@ a {
     margin-bottom: 5px;
 }
 
+.footer .container .links dl dd {
+    margin-bottom: 5px;
+}
+
 .footer .container .links dl dd a {
     color: #333;
     font-size: 12px;
 }
 
+.footer .container .links dl dd:hover a {
+    color: #00a4ff;
+}
