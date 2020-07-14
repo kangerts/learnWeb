@@ -1,0 +1,53 @@
+// 清除默认样式
+*{
+    padding:0px;
+    margin: 0px;
+    font-size: 12px;
+}
+
+// 页面容器
+div.container{
+    background-color: red;
+
+    // 页面头部
+    header{
+        background-color: #fff;
+        border-bottom: 1px solid yellowgreen;
+        box-shadow: 0 5px 5px rgba(100, 100, 100, .3);
+
+        nav{
+            padding: 30px 10px;
+            width: 1200px;
+            margin: 0px auto;
+            background-color: red;
+
+            ul{
+                float: left;
+
+                li{
+                    list-style: none;
+
+                    a{
+                        text-decoration: none;
+                        font-size: 14px;
+                        color: #555;
+                    }
+                }
+            }
+
+            div.buttonGroup{
+                float: right;
+                background-color: red;
+                width: 100px;
+
+                button{
+                    border: 1px solid #ccc;
+                }
+
+                button:nth-of-type(1){
+
+                }
+            }
+        }
+    }
+}

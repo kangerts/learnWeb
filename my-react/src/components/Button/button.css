@@ -1,0 +1,35 @@
+/*按钮基本样式*/
+.my-button {
+    outline: none;
+    border: 1px solid pink;
+    width: 80px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.my-button:hover {
+    box-shadow: aqua 1px 1px;
+}
+
+/*按钮大小样式*/
+.my-button.ss {
+    width: 100px;
+}
+
+.my-button.small {
+    width: 60px;
+}
+
+/*按钮类型样式*/
+.my-button.main {
+    background-color: aquamarine;
+}
+
+.my-button.yy {
+    background-color: aquamarine;
+    border-radius: 50%;
+}
+
+.my-button.disabled {
+    background-color: red;
+}
