@@ -247,6 +247,10 @@ a {
     margin-left: 30px;
 }
 
+.goods ul li:hover a {
+    color: #00a4ff;
+}
+
 .goods ul li a {
     padding: 0 30px;
     font-size: 16px;
