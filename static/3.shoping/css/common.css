@@ -10,3 +10,46 @@
     font-style: normal;
     font-display: block;
 }
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.style_red {
+    color: #c81623;
+}
+
+/*页面版心*/
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/*快捷导航模块*/
+.shortcut {
+    height: 31px;
+    line-height: 31px;
+    background-color: #f1f1f1;
+}
+
+.shortcut ul li {
+    float: left;
+}
+
+/*even 偶数  odd奇数*/
+.shortcut .fr ul li:nth-child(even) {
+    width: 1px;
+    height: 12px;
+    background-color: #666;
+    margin: 9px 15px 0;
+}
+
+.shortcut .fr .arrow-icon::after {
+    content: '\e91e';
+    font-family: 'icomoon', serif;
+    margin-left: 5px;
+}
