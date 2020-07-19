@@ -80,3 +80,28 @@
     /*text-indent: -999px;*/
     /*overflow: hidden;*/
 }
+
+.header .search {
+    position: absolute;
+    left: 346px;
+    top: 25px;
+    width: 538px;
+    height: 36px;
+    border: 2px solid #b1191a;
+}
+
+.header .search input[type="search"] {
+    float: left;
+    height: 32px;
+    width: 454px;
+    text-indent: 10px;
+}
+
+.header .search button {
+    float: left;
+    width: 80px;
+    height: 32px;
+    background-color: #b1191a;
+    font-size: 16px;
+    color: #fff;
+}
