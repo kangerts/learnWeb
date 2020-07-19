@@ -53,3 +53,30 @@
     font-family: 'icomoon', serif;
     margin-left: 5px;
 }
+
+/*页面header模块*/
+.header {
+    position: relative;
+    height: 105px;
+    background-color: pink;
+}
+
+.header .logo {
+    position: absolute;
+    top: 25px;
+    width: 171px;
+    height: 61px;
+    background-color: skyblue;
+}
+
+.header .logo a {
+    display: block;
+    width: 171px;
+    height: 61px;
+    background: url(../images/logo.png) no-repeat;
+    /*京东隐藏logo文字的做法*/
+    font-size: 0;
+    /*淘宝京东隐藏logo文字的做法*/
+    /*text-indent: -999px;*/
+    /*overflow: hidden;*/
+}
