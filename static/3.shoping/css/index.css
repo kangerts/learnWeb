@@ -88,4 +88,23 @@
     margin-top: 5px;
 }
 
+.recom {
+    height: 163px;
+    background-color: pink;
+    margin-top: 12px;
+}
+
+.recom .recom_hd {
+    float: left;
+    height: 163px;
+    width: 205px;
+    background-color: #5c5251;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.recom .recom_bd {
+    float: left;
+}
+
 
