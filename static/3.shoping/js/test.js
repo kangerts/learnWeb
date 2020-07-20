@@ -13,11 +13,9 @@ function getMax() {
 
 getMax(1, 2, 5, 1, 2, 6, 7, 9, 3, 10)
 
-
 /**
  * 冒泡排序
  */
-
 function sort(arr) {
     for (let i = 0; i < arr.length - 1; i++) {
         for (let j = 0; j < arr.length - i - 1; j++) {
