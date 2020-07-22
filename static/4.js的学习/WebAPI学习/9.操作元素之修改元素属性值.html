@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="index">首页</button>
+    <button id="stars">stars</button>
+    <a href="#">###</a>
+    <script>
+
+        let a = document.getElementsByTagName('a')[0];
+
+        let btn0 = document.getElementById('index');
+
+        let btn1 = document.getElementById('stars');
+
+        btn0.onclick = function () {
+            a.innerText = 'kangert的github首页'
+            a.href = 'https://github.com/kangerts'
+        }
+
+        btn1.onclick = function () {
+            a.innerText = 'kangert的github的stars'
+            a.href = 'https://github.com/kangerts?tab=stars'
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button>按钮</button>
+    <label>
+        <input type="text" value="输入内容">
+    </label>
+    <script>
+        // 1.获取元素
+        let btn = document.querySelector('button');
+        let input = document.querySelector('input');
+        // 2.注册事件
+        btn.onclick = function () {
+            input.value = '被点击了'
+            // btn.disabled = true
+            // this此时指向事件函数的调用者 那就是btn
+            this.disabled = true
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>
