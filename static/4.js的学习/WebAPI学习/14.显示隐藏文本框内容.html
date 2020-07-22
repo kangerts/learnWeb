@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="手机">
+    <script>
+        // 1.获取元素
+        let input = document.querySelector('input');
+        // 2.注册事件
+        // 获取焦点
+        input.onfocus = function () {
+            if (this.value === '手机') {
+                this.value = ''
+            }
+            this.style.color = '#2B2B2B'
+        }
+        // 失去焦点
+        input.onblur = function () {
+            if (this.value === '') {
+                this.style.color = '#2B2B2B'
+                this.value = '手机'
+            }
+            this.style.color = '#999'
+        }
+    </script>
+</body>
+</html>

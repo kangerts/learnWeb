@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        let div = document.querySelector('div');
+        div.onclick = function () {
+            // 此方法修改样式产生的是行内样式，CSS权重比较高
+            let color = this.style.backgroundColor
+            this.style.backgroundColor = color === 'pink' ? '#00A1D6' : 'pink'
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        .box {
+            width: 250px;
+            margin: 100px auto;
+        }
+
+        .box li {
+            float: left;
+            width: 24px;
+            height: 24px;
+            margin: 15px;
+            background: url(images/taobao.png) no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        let lis = document.querySelectorAll('li');
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].style.backgroundPosition = '0 -' + i * 44 + 'px';
+        }
+    </script>
+</body>
+</html>
