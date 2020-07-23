@@ -97,7 +97,7 @@
             for (let i = 0; i < tab_list.length; i++) {
                 tab_list[i].onclick = function () {
                     for (let k = 0; k < tab_list.length; k++) {
-                        tab_list[k].setAttribute('class', '')
+                        tab_list[k].removeAttribute('class')
                     }
                     this.setAttribute('class', 'current')
                     for (let a = 0; a < tab_con.length; a++) {
