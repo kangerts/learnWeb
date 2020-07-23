@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            li {
+                list-style: none;
+            }
+
+            .tab {
+                width: 600px;
+                height: 300px;
+                margin: 100px auto;
+            }
+
+            .tab .tab_list ul {
+                height: 50px;
+                background-color: #a5a5a5;
+                border: 1px solid #333333;
+            }
+
+            .tab .tab_list ul li {
+                float: left;
+                cursor: pointer;
+                width: 80px;
+                height: 50px;
+                text-align: center;
+                line-height: 50px;
+                font-weight: 700;
+            }
+
+            .tab .tab_list ul li.current {
+                background-color: red;
+                color: white;
+            }
+
+            .tab .tab_list .tab_con {
+                width: 600px;
+                height: 100px;
+                border: 1px solid #00a4ff;
+            }
+
+            .tab .tab_list .tab_con .item {
+                display: none;
+            }
+
+            .tab .tab_list .tab_con div.active {
+                display: block;
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="tab">
+            <div class="tab_list">
+                <ul>
+                    <li class="current">商品介绍</li>
+                    <li>规格包装</li>
+                    <li>售后保障</li>
+                    <li>商品评价</li>
+                    <li>手机社区</li>
+                </ul>
+                <div class="tab_con">
+                    <div class="item active">
+                        商品介绍板块
+                    </div>
+                    <div class="item">
+                        规格包装板块
+                    </div>
+                    <div class="item">
+                        售后保障板块
+                    </div>
+                    <div class="item">
+                        商品评价板块
+                    </div>
+                    <div class="item">
+                        手机社区板块
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            let tab_list = document.querySelector('.tab_list').getElementsByTagName('li');
+            let tab_con = document.querySelector('.tab_con').getElementsByTagName('div');
+
+            for (let i = 0; i < tab_list.length; i++) {
+                tab_list[i].onclick = function () {
+                    for (let k = 0; k < tab_list.length; k++) {
+                        tab_list[k].setAttribute('class', '')
+                    }
+                    this.setAttribute('class', 'current')
+                    for (let a = 0; a < tab_con.length; a++) {
+                        tab_con[a].setAttribute('class', 'item');
+                    }
+                    tab_con[i].setAttribute('class', 'item active');
+                }
+            }
+        </script>
+    </body>
+</html>

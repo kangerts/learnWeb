@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <div id="demo"></div>
+        <script>
+            let div = document.querySelector('div');
+            // 1）通过.方式获取属性值
+            console.log(div.id);
+            // 2）通过方法获取属性值
+            console.log(div.getAttribute('id'));
+            // 3）添加自定义属性
+            // 推荐使用setAttribute设置属性添加自定义属性等
+            div.setAttribute('data-kk', 'kangert');
+            // 4）设置属性
+            div.id = 'kk'
+            div.setAttribute('index', 1);
+            console.log(div);
+            // 推荐使用getAttribute获取属性值
+            console.log(div.getAttribute('data-kk'));
+        </script>
+    </body>
+</html>
