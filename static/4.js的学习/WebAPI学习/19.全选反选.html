@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            table {
+                width: 300px;
+                text-align: center;
+                margin: 100px auto;
+            }
+
+            table thead {
+                background-color: deepskyblue;
+            }
+
+            table tbody tr:hover {
+                background-color: skyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <table border="1" cellspacing="0">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="checkBoxAll"></th>
+                    <th>商品</th>
+                    <th>价格</th>
+                </tr>
+            </thead>
+            <tbody id="tbCheckBoxs">
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>Iphone</td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>Mac</td>
+                    <td>$300</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>Apple</td>
+                    <td>$3</td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            let checkBoxAll = document.getElementById('checkBoxAll');
+            let tbCheckBoxs = document.getElementById('tbCheckBoxs').getElementsByTagName('input');
+
+            // 当时全局选择按钮操作则判断做出对应操作
+            checkBoxAll.onclick = function () {
+                for (let i = 0; i < tbCheckBoxs.length; i++) {
+                    tbCheckBoxs[i].checked = this.checked
+                }
+            }
+
+            // 每次点击判断是否所有被选中，只要有一个没选中，全选按钮就为false
+            for (let i = 0; i < tbCheckBoxs.length; i++) {
+                tbCheckBoxs[i].onclick = function () {
+                    let flag = true
+                    for (let k = 0; k < tbCheckBoxs.length; k++) {
+                        if (!tbCheckBoxs[k].checked) {
+                            flag = false
+                        }
+                    }
+                    checkBoxAll.checked = flag
+                }
+            }
+        </script>
+    </body>
+</html>
