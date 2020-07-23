@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .skyblue {
+            background-color: skyblue;
+        }
+
+        .hotpink {
+            background-color: hotpink;
+        }
+
+        .box {
+            height: 55px;
+            width: 380px;
+            margin: 0 auto;
+            background-color: rgba(240, 214, 240, 0.5);
+        }
+
+        .box ul li {
+            display: inline-block;
+            float: left;
+            width: 85px;
+            text-align: center;
+            line-height: 50px;
+            margin: 4px;
+            cursor: pointer;
+        }
+
+        .box ul li:hover {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li style="background-color:red;">red</li>
+            <li style="background-color:skyblue;">skyblue</li>
+            <li style="background-color:hotpink;">hotpink</li>
+            <li style="background-color:black;">black</li>
+        </ul>
+    </div>
+    <script>
+        let body = document.body
+        let lis = document.getElementsByTagName('li');
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].onclick = function () {
+                body.style.backgroundColor = this.style.backgroundColor
+                this.style.hove
+            }
+        }
+    </script>
+</body>
+</html>
