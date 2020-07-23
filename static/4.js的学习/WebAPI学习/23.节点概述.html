@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <div>我是div</div>
+        <span>我是span</span>
+        <ul>
+            <li>我是li1</li>
+            <li>我是li2</li>
+            <li>我是li3</li>
+            <li>我是li4</li>
+            <li>我是li5</li>
+        </ul>
+        <div class="demo">
+            <div class="box">
+                <span class="erweima">X</span>
+            </div>
+        </div>
+        <script>
+            let box = document.querySelector('.box');
+            // 获取子节点
+            console.log(box.children);
+
+            // 利用子节点获取父节点（得到的是里其最近的父元素，也就是他的亲爸爸而不是爷爷什么的）
+            let erweima = document.querySelector('.erweima');
+            console.log(erweima.parentNode);
+
+
+        </script>
+    </body>
+</html>

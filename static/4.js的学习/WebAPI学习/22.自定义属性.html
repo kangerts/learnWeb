@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <div data-index="1" data-aa-bb="1" data-user-list="['kk', 'aa', 'ww']">kkk</div>
+        <script>
+            let div = document.querySelector('div');
+
+            // 1）获取属性
+            console.log(div.getAttribute('data-index'));
+            // 2）设置属性
+            div.setAttribute('data-value', 'kangert');
+            // 3）通过H5新增自定义属性的方法dataset添加
+            // dataset是一个集合，存放了所有的以‘data-’开头的自定义属性
+            div.dataset.key = 'kk';
+            console.log(div, div.dataset);
+            // 4）通过dataset获取以‘data-’开头的自定义属性需要使用驼峰命名法
+            console.log(div.dataset.userList);
+            console.log(div.dataset['userList']);
+            console.log(div.dataset['aaBb']);
+
+
+
+
+        </script>
+    </body>
+</html>
