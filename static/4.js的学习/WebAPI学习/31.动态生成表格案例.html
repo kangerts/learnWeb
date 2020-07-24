@@ -7025,7 +7025,7 @@
                 for (let i = 0; i < eleTr.length; i++) {
                     let index = eleTr[i].dataset.index
                     if (Number(index) === Number(delIndex)) {
-                        tb.removeChild(eleTr[i]);
+                        return tb.removeChild(eleTr[i]);
                     }
                 }
             }
