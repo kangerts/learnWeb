@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            li {
+                list-style: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+
+            .nav {
+                width: 400px;
+                height: 45px;
+                line-height: 45px;
+                background-color: #999999;
+                margin: 100px auto;
+                text-align: center;
+            }
+
+            .nav .nav_item {
+                float: left;
+            }
+
+            .nav .nav_item > a {
+                display: inline-block;
+                height: 45px;
+                padding: 0 34px;
+            }
+
+            .nav > li.hover > a {
+                background-color: #00a4ff;
+            }
+
+            .nav .nav_item ul {
+                display: none;
+                width: 100px;
+                height: 135px;
+                margin-top: 2px;
+                background-color: #333333;
+            }
+
+            .nav > li.hover ul {
+                display: block;
+            }
+
+            .nav .nav_item ul li.hover {
+                background-color: #00a4ff;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="nav">
+            <li class="nav_item">
+                <a href="#">微博</a>
+                <ul>
+                    <li><a href="#">私信</a></li>
+                    <li><a href="#">评论</a></li>
+                    <li><a href="#">@我</a></li>
+                </ul>
+            </li>
+            <li class="nav_item">
+                <a href="#">微博</a>
+                <ul>
+                    <li><a href="#">私信</a></li>
+                    <li><a href="#">评论</a></li>
+                    <li><a href="#">@我</a></li>
+                </ul>
+            </li>
+            <li class="nav_item">
+                <a href="#">微博</a>
+                <ul>
+                    <li><a href="#">私信</a></li>
+                    <li><a href="#">评论</a></li>
+                    <li><a href="#">@我</a></li>
+                </ul>
+            </li>
+            <li class="nav_item">
+                <a href="#">微博</a>
+                <ul>
+                    <li><a href="#">私信</a></li>
+                    <li><a href="#">评论</a></li>
+                    <li><a href="#">@我</a></li>
+                </ul>
+            </li>
+        </ul>
+        <script>
+            // 1）只需鼠标经过nav下的nav_item则触发hover样式显示子元素ul菜单并为a元素背景色
+            // 2）当ul菜单显示出来时鼠标经过菜单的li元素则触发hover样式
+            let nav = document.querySelector('.nav');
+            let nav_item = nav.children;
+
+            for (let i = 0; i < nav_item.length; i++) {
+                nav_item[i].onmouseover = function () {
+                    this.setAttribute('class', 'nav_item hover');
+                }
+
+                nav_item[i].onmouseout = function () {
+                    this.setAttribute('class', 'nav_item');
+                }
+
+                let lis = nav_item[i].children[nav_item[i].children.length - 1].children;
+                for (let k = 0; k < lis.length; k++) {
+                    lis[k].onmouseover = function () {
+                        this.setAttribute('class', 'hover')
+                    }
+
+                    lis[k].onmouseout = function () {
+                        this.setAttribute('class', '')
+                    }
+                }
+            }
+
+        </script>
+    </body>
+</html>
