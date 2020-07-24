@@ -5,8 +5,6 @@
         <title>Title</title>
     </head>
     <body>
-        <div>我是div</div>
-        <span>我是span</span>
         <ul>
             <li>我是li1</li>
             <li>我是li2</li>
@@ -14,30 +12,35 @@
             <li>我是li4</li>
             <li>我是li5</li>
         </ul>
-        <div class="demo">
-            <div class="box">
-                <span class="erweima">X</span>
-            </div>
-        </div>
         <script>
-            let box = document.querySelector('.box');
-            // 获取子节点
-            console.log(box.childNodes);
-
-            // 利用子节点获取父节点（得到的是里其最近的父元素，也就是他的亲爸爸而不是爷爷什么的）
-            let erweima = document.querySelector('.erweima');
-            console.log(erweima.parentNode);
-
             let ul = document.querySelector('ul');
-            let lis = ul.querySelector('li');
 
-            // childNodes获取的是所有子节点，包含元素节点\文本节点等等
-            console.log(ul.childNodes);
-            console.log(ul.childNodes[0].nodeType)
-            console.log(ul.childNodes[1].nodeType)
+            /** 以下两种写法不存在兼容性问题 */
+            // 1）获取子节点第一个子节点（不管是文本还是元素）
+            console.log(ul.firstChild);
 
-            // children获取所有子元素节点（非标准，但是浏览器大部分都支持了，大胆使用）
-            console.log(ul.children)
+            // 2）获取子节点最后一个子节点（不管是文本还是元素）
+            console.log(ul.lastChild);
+
+            /** 以下两种写法IE9以上才支持 */
+            // 3）获取子节点第一个元素（元素）
+            console.log(ul.firstElementChild);
+
+            // 4）获取子节点第一个元素（元素）
+            console.log(ul.lastElementChild);
+
+            /** 以下两种写法不存在兼容性问题，开发推荐使用 */
+            // 5）返回第一个子元素
+            console.log(ul.children[0]);
+
+            // 6）返回最后一个子元素
+            console.log(ul.children[ul.children.length - 1])
+
+
+
+
+
+
 
 
 
