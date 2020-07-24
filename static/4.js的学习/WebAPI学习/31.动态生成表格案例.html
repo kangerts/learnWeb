@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            table {
+                margin: 100px auto;
+                text-align: center;
+                border: 1px solid black;
+            }
+
+            table tr th {
+                padding: 0 20px;
+            }
+
+            table tbody tr:nth-child(2n) {
+                background-color: #ebebeb;
+            }
+
+            table tbody tr:hover {
+                background-color: #ebebeb;
+            }
+
+            table thead {
+                background-color: #999999;
+            }
+        </style>
+    </head>
+    <body>
+        <table cellspacing="0">
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>科目</th>
+                    <th>成绩</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="tb">
+                <!--                <tr>-->
+                <!--                    <td>kangert</td>-->
+                <!--                    <td>Java</td>-->
+                <!--                    <td>100</td>-->
+                <!--                    <td><a href="#">删除</a></td>-->
+                <!--                </tr>-->
+                <!--                <tr>-->
+                <!--                    <td>kangert</td>-->
+                <!--                    <td>Java</td>-->
+                <!--                    <td>100</td>-->
+                <!--                    <td><a href="#">删除</a></td>-->
+                <!--                </tr>-->
+                <!--                <tr>-->
+                <!--                    <td>kangert</td>-->
+                <!--                    <td>Java</td>-->
+                <!--                    <td>100</td>-->
+                <!--                    <td><a href="#">删除</a></td>-->
+                <!--                </tr>-->
+                <!--                <tr>-->
+                <!--                    <td>kangert</td>-->
+                <!--                    <td>Java</td>-->
+                <!--                    <td>100</td>-->
+                <!--                    <td><a href="#">删除</a></td>-->
+                <!--                </tr>-->
+                <!--                <tr>-->
+                <!--                    <td>kangert</td>-->
+                <!--                    <td>Java</td>-->
+                <!--                    <td>100</td>-->
+                <!--                    <td><a href="#">删除</a></td>-->
+                <!--                </tr>-->
+            </tbody>
+        </table>
+        <script>
+            let studentData = [
+                {name: 'kangert', subject: 'Java', score: 100},
+                {name: 'HH', subject: 'Python', score: 88},
+                {name: 'KK', subject: 'C++', score: 100},
+                {name: 'kangert', subject: 'JavaScript', score: 100},
+                {name: 'kangert', subject: 'Shell', score: 100},
+                {name: 'kangert', subject: 'JavaScript', score: 100},
+                {name: 'kangert', subject: 'JavaScript', score: 100},
+                {name: 'kangert', subject: 'JavaScript', score: 100},
+                {name: 'kangert', subject: 'JavaScript', score: 100}
+            ]
+
+            let tb = document.getElementById('tb');
+            for (let i = 0; i < studentData.length; i++) {
+                tb.innerHTML+=  `
+                <tr data-index="${i}">
+                    <td>${studentData[i].name}</td>
+                    <td>${studentData[i].subject}</td>
+                    <td>${studentData[i].score}</td>
+                    <td><a href="javascript:;" onclick="deleteTr(${i})">删除</a></td>
+                </tr>
+                `;
+            }
+
+            /**
+             * 删除tr元素
+             * @param delIndex 要删除的tr元素自定义属性data-index的值
+             */
+            function deleteTr(delIndex) {
+                let eleTr = tb.children;
+                for (let i = 0; i < eleTr.length; i++) {
+                    let index = eleTr[i].dataset.index
+                    if (Number(index) === Number(delIndex)) {
+                        tb.removeChild(eleTr[i]);
+                    }
+                }
+            }
+
+
+        </script>
+    </body>
+</html>
