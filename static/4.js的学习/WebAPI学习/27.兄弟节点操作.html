@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <div>我是最棒的 哈哈哈哈</div>
+        <span>你也是最棒的 哈哈哈</span>
+        <script>
+            let div = document.querySelector('div');
+            let span = document.querySelector('span');
+
+            // 1）获取下一个兄弟节点（包含文本，元素都属于节点）
+            console.log(div.nextSibling);
+
+            // 2）获取下一个兄弟元素（IE9以上才支持）
+            console.log(div.nextElementSibling);
+
+            // 3）获取上一个兄弟节点（包含文本，元素都属于节点）
+            console.log(span.previousSibling);
+
+            // 4）获取上一个兄弟元素（IE9以上才支持）
+            console.log(span.previousElementSibling);
+
+            // 5）对于上述兼容问题没有好的解决方法，可以自己封装一个
+            function getNextElementSibling(element) {
+                let isNode = true
+                while (isNode) {
+                    isNode = element = element.nextSibling;
+                    // nodeType = 1 代表是元素节点
+                    if (element.nodeType === 1) {
+                        return element;
+                    }
+                }
+                return null;
+            }
+
+            let res = getNextElementSibling(div);
+            console.log(res);
+
+
+        </script>
+    </body>
+</html>
