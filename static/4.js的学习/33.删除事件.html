@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                background-color: deepskyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div>div 1</div>
+        <div>div 2</div>
+        <div>div 3</div>
+        <script>
+            let divs = document.querySelectorAll('div');
+
+            // 1）传统的注册事件及其解绑事件操作
+            divs[0].onclick = function () {
+                alert('div 1');
+                // 解绑
+                this.onclick = null;
+            }
+
+            // 2）addEventListener绑定及其removeEventListener移除
+            divs[1].addEventListener('click', fn);
+            function fn () {
+                alert('div 2');
+                // 解绑
+                divs[1].removeEventListener('click', fn);
+            }
+
+        </script>
+    </body>
+</html>

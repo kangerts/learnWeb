@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <button>传统</button>
+        <button>方法监听注册事件</button>
+        <button>淘汰的注册事件</button>
+        <script>
+            // 1）传统注册事件的方式具有唯一性，后注册的事件会覆盖前一个事件
+            let btns = document.querySelectorAll('button');
+            btns[0].onclick = function () {
+                alert(111);
+            }
+
+            btns[0].onclick = function () {
+                alert(222);
+            }
+
+            // 2）addEventListener监听的方式注册事件（W3C推荐，但是IE9以上才支持）
+            // 此方式注册的事件都是独立的，不会被覆盖
+            btns[1].addEventListener('click', function () {
+                alert(111);
+            })
+
+            btns[1].addEventListener('click', function () {
+                alert(222);
+            })
+
+            // 3）attachEvent方式添加监听事件（不推荐使用!!!,IE9以下才支持）
+            btns[2].attachEvent('onclick', function () {
+                alert(111);
+            })
+
+            /**
+             * 4）自定义的注册事件的兼容性解决方案
+             * @param element 元素对象
+             * @param eventName 事件名称
+             * @param callback 回调函数
+             */
+            function addEventListener(element, eventName, callback) {
+                // 判断当前浏览器是否支持addEventListener方法
+                if (element.addEventListener) {
+                    element.addEventListener(eventName, callback); //第三个参数默认为false
+                } else if (element.attachEvent) {
+                    element.attachEvent('on' + eventName, callback);
+                } else {
+                    // 相当于element.onclick = callback
+                    element['on' + eventName] = callback;
+                }
+            }
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
