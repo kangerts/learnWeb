@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <input type="text">
+        <button>发送短信</button>
+        <script>
+            let input = document.querySelector('input');
+            let btn = document.querySelector('button');
+
+            let timmer = null;
+            let count = 60;
+            btn.addEventListener("click", function () {
+                btn.disabled = true;
+                timmer = setInterval(function () {
+                    count--;
+                    btn.innerHTML = `请${count}秒后发送`;
+                    if (count <= 0) {
+                        count = 60;
+                        btn.disabled = false;
+                        btn.innerHTML = '发送短信';
+                        clearInterval(timmer);
+                    }
+                }, 100)
+            })
+        </script>
+    </body>
+</html>

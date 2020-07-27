@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <button>点击</button>
+        <script>
+            // this指向问题一般情况下this最终指向调用它的对象
+
+            // 1）全局作用域或者普通函数以及定时器中this指向全局对象window（注意定时器中的this指向window）
+            console.log(this);
+            function fn() {
+                console.log(this);
+            }
+            fn();
+            setTimeout(function () {
+                console.log(this);
+            },1000)
+
+            // 2）方法调用中谁调用this指向谁
+            let o = {
+                say () {
+                    console.log(this);
+                }
+            }
+            o.say();
+            let btn = document.querySelector('button');
+            btn.onclick = function () {
+                console.log(this);
+            }
+
+            // 3）构造函数中this指向构造函数的实例对象
+            function My() {
+                this.name = 'kangert';
+                console.log(this); // 指向kk实例对象
+            }
+            let kk = new My();
+
+
+
+
+
+        </script>
+    </body>
+</html>

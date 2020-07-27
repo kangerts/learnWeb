@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            div {
+                display: inline-block;
+                height: 80px;
+                width: 80px;
+                line-height: 80px;
+                background-color: #333;
+                color: #ebebeb;
+                font-weight: 700;
+                text-align: center;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hour">08</div>
+        <div class="minute">52</div>
+        <div class="second">55</div>
+        <button>停止</button>
+        <script>
+            let hour = document.querySelector('.hour');
+            let minute = document.querySelector('.minute');
+            let second = document.querySelector('.second');
+            let inputTime = new Date('2020-07-28 16:40:00');
+
+            // 获取当前倒计时
+            function getMyTime() {
+                let nowTime = new Date();
+                let times = (inputTime - nowTime) / 1000; // times是剩余总时间的秒数
+                let h = parseInt(times / 60 / 60 % 24);
+                h = h < 10 ? '0' + h : h;
+                let m = parseInt(times / 60 % 60);
+                m = m < 10 ? '0' + m : m;
+                let s = parseInt(times % 60);
+                s = s < 10 ? '0' + s : s;
+
+                // 设置事件
+                hour.innerHTML = h;
+                minute.innerHTML = m;
+                second.innerHTML = s;
+            }
+
+            // 防止setInterval第一次执行间隔事件有空白
+            getMyTime();
+
+            // 开启定时器
+            let timmer0 = setInterval(getMyTime, 1000);
+
+            // 清除定时器
+            let btn = document.querySelector('button');
+            btn.addEventListener('click', function () {
+                clearInterval(timmer0);
+            });
+
+
+        </script>
+    </body>
+</html>

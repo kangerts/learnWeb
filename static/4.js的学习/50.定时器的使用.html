@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                background-color: skyblue;
+                margin: 100px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div>广告</div>
+        <button>清除定时器</button>
+        <script>
+            function callback() {
+                console.log(1);
+            }
+            // 1）setTimeout 时间到了调用指定函数，只调用一次
+            let timmer0 = setTimeout(callback, 1000); // 推荐写法
+            let timmer1 = setTimeout('callback()', 2000); // 不推荐
+            // 定时器命名
+            let timmer2 = setTimeout(callback, 500);
+
+            // 5秒关闭广告
+            let div = document.querySelector('div');
+            let timmer3 = setTimeout(function () {
+                div.style.display = 'none';
+            },5000);
+
+            // 清除定时器（广告就不会关闭了）
+            let btn = document.querySelector('button');
+            btn.addEventListener('click', function () {
+                clearTimeout(timmer3);
+            })
+
+            // 2）setInterval 间隔多久调用指定函数，
+            let index = 0;
+            let timmer4 =  setInterval(function () {
+                console.log(index++);
+            }, 1000)
+
+            // 清除定时器
+            clearInterval(timmer4);
+        </script>
+    </body>
+</html>

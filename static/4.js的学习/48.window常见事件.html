@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <script>
+            // let btn = document.querySelector('button');
+            // btn.addEventListener('click', function () {
+            //     alert('点击了我！');
+            // })
+
+            // 页面所有东西（dom元素，图片，flash，css等）加载完毕后才执行里面的代码
+            // 1）传统的方式
+            window.onload = function () {
+                let btn = document.querySelector('button');
+                btn.addEventListener('click', function () {
+                    alert('点击了我！');
+                })
+            };
+
+            // 2）新方法（与上面的独立）
+            window.addEventListener('load', function () {
+                let btn = document.querySelector('button');
+                btn.addEventListener('click', function () {
+                    alert('点击了我！');
+                })
+            });
+
+            // DOM加载完毕后执行（不包含图片，css，flash等等）
+            document.addEventListener('DOMContentLoaded', function () {
+                alert('111');
+            });
+
+
+        </script>
+        <button>点击</button>
+    </body>
+</html>
