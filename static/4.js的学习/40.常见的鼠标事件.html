@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <div>kkkkkk</div>
+    </body>
+    <script>
+        // 1）contextmenu右键菜单
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault(); // 阻止
+        })
+        // 2）selectstart选中文字
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        })
+        // 3）keydown 键盘按下  keyup键盘抬起
+        document.addEventListener('keydown', function (e) {
+            console.log(e.key);
+            if (e.key === 'F12') {
+                e.preventDefault();
+            }
+        })
+
+
+
+
+    </script>
+</html>

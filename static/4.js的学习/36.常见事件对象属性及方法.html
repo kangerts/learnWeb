@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                background-color: deepskyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div>123</div>
+        <ul>
+            <li>li 1</li>
+            <li>li 2</li>
+            <li>li 3</li>
+        </ul>
+        <script>
+            // 1）e.target返回的是触发事件对象（元素） this返回的是绑定事件对象
+            let div = document.querySelector('div');
+            div.addEventListener('click', function (e) {
+                console.log(e.target);
+                console.log(this);
+            });
+
+            let ul = document.querySelector('ul');
+            ul.addEventListener('click', function (e) {
+                // e.target指向了点击的对象，谁触发事件指向谁 点击li e.target指向li
+                console.log(e.target);
+                // 此时ul绑定了事件，那么这里的this指向ul
+                console.log(this);
+            })
+
+            // 2）了解即可
+            div.onclick = function (e) {
+                e = e || window.event; // 兼容写法
+                let target = e.target || e.srcElement; // 兼容写法
+                console.log(target);
+            }
+
+
+
+        </script>
+    </body>
+</html>

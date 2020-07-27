@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            body {
+                height: 3000px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            document.addEventListener('click', function (e) {
+                // 1）相对于可视窗口距离顶部和左边的距离
+                console.log('client', 'X', e.clientX, 'Y', e.clientY);
+                // 2）page 鼠标相对于页面文档的X和Y
+                console.log('page', 'X', e.pageX, 'Y', e.pageY);
+                // 3）screen 鼠标相对于电脑屏幕的X和Y
+                console.log('screen', 'X', e.screenX, 'Y', e.screenY);
+            })
+        </script>
+    </body>
+</html>

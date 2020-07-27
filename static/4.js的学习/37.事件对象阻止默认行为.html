@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <div>123</div>
+        <a href="http://www.baidu.com">百度</a>
+        <form action="http://www.baidu.com">
+            <input type="submit" value="提交">
+        </form>
+        <script>
+            let div = document.querySelector('div');
+            div.addEventListener('click', fn);
+            div.addEventListener('mouseover', fn);
+            div.addEventListener('mouseout', fn);
+
+            function fn(e) {
+                // 1）返回事件类型
+                console.log(e.type);
+            }
+            let a = document.querySelector('a');
+            a.addEventListener('click', function (e) {
+                // 2）阻止默认行为（事件） 或者不让链接跳转 表单提交 （dom标准写法）
+                e.preventDefault();
+            })
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

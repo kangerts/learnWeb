@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <script>
+            // 1）keyup键盘抬起时触发
+            document.onkeyup = function (e) {
+                console.log('keyup键盘抬起时触发', e.type);
+            }
+
+            // 2）keydown键盘按下时触发
+            document.onkeydown = function (e) {
+                console.log('keydown键盘按下时触发', e.type);
+            }
+
+            // 3）keypress键盘按下时触发（不识别功能按键 如 ctrl shift 箭头等）
+            document.onkeypress = function (e) {
+                console.log('keypress键盘按下时触发', e.type);
+            }
+
+
+
+
+
+        </script>
+    </body>
+</html>

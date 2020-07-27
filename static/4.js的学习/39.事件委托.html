@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <ul>
+            <li>li 1</li>
+            <li>li 2</li>
+            <li>li 3</li>
+            <li>li 4</li>
+            <li>li 5</li>
+        </ul>
+        <script>
+            // 事件委托单核心原理：给父几点添加监听 通过冒泡 父亲捕获到事件并处理
+            let ul = document.querySelector('ul');
+            ul.addEventListener('click', function (e) {
+                // alert('li 哈哈哈');
+                // e.target可以获取点击的对象
+                e.target.style.backgroundColor = 'deepskyblue';
+            })
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+            }
+            div {
+                position: absolute;
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                background-color: deepskyblue;
+                text-align: center;
+                line-height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>kangert</div>
+        <script>
+            let div = document.querySelector('div');
+            // 给文档对象注册鼠标移动事件
+            document.addEventListener('mousemove', function (e) {
+                // 鼠标每次移动就给div设置最新的top left的值
+                div.style.top = e.clientY - 50 + 'px';
+                div.style.left = e.clientX - 50 + 'px';
+            })
+        </script>
+    </body>
+</html>
