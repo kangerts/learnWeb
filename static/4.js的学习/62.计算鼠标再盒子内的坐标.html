@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            .box {
+                position: relative;
+                width: 200px;
+                height: 200px;
+                background-color: skyblue;
+                margin: 100px auto;
+            }
+
+            .box .son {
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                background-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <div class="son"></div>
+        </div>
+        <script>
+            // 获取鼠标距离盒子左右的距离
+            // 1）首先得到鼠标再页面中的坐标（e.pageX, e.pageY）
+            // 2）其次获得盒子在页面中的距离（box.offsetLeft, box.offsetTop）
+            // 3）最后用鼠标距离页面的坐标减去盒子在页面的坐标就的大了鼠标在盒子中的坐标
+            let box = document.querySelector('.box');
+            let son = document.querySelector('.son');
+            let x = 0;
+            let y = 0;
+            box.addEventListener('mousemove', function (e) {
+                // console.log(e.pageX);
+                // console.log(e.pageY);
+                //
+                // console.log(box.offsetLeft);
+                // console.log(box.offsetTop);
+
+                x = e.pageX - box.offsetLeft;
+                y = e.pageY - box.offsetTop;
+
+                console.log(x, y);
+
+                if (x >= 50 && y <= 50) {
+                    son.style.top = y - 25 + 'px';
+                    son.style.left = x - 25 + 'px';
+                }
+            });
+
+        </script>
+    </body>
+</html>

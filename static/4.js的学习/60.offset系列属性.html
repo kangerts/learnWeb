@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            .father {
+                position: relative;
+                width: 100px;
+                height: 100px;
+                background-color: skyblue;
+                margin: 100px;
+            }
+
+            .son {
+                width: 50px;
+                height: 50px;
+                background-color: pink;
+                margin-left: 10px;
+            }
+
+            .w {
+                /*width: 200px;*/
+                height: 200px;
+                background-color: deepskyblue;
+                margin: 0 auto 200px;
+                padding: 10px;
+                border: 5px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="father">
+            <div class="son"></div>
+        </div>
+        <div class="w"></div>
+        <script>
+            let father = document.querySelector('.father');
+            let son = document.querySelector('.son');
+
+            // 可以得到元素的偏移位置 返回不带单位的数值
+            console.log(father.offsetTop);
+            console.log(father.offsetLeft);
+            // 子元素以带有定位的父元素为准  如果没有父元素或者没有父元素定位 则以body为准
+            console.log(son.offsetTop);
+            console.log(son.offsetLeft);
+            // 可以得到元素的大小 宽度和高度（包含padding,border,width）
+            let w = document.querySelector('.w');
+            console.log(w.offsetWidth);
+            console.log(w.offsetHeight);
+            // 返回带有定位的父元素 否则返回的是body
+            console.log(son.offsetParent);
+            // 返回父元素 最近一级的父元素 亲爸爸 不管父元素有没有定位
+            console.log(son.parentNode);
+        </script>
+    </body>
+</html>

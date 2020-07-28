@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <script>
+            // PC端移动端识别
+            if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile)/i))) {
+                window.location.href = '手机';
+            } else {
+                window.location.href = 'PC';
+            }
+        </script>
+    </body>
+</html>

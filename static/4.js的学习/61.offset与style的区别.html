@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            .box {
+                width: 200px;
+                height: 200px;
+                background-color: skyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box" style="width: 200px"></div>
+        <script>
+            let box = document.querySelector('.box');
+            // offset可以获得任意样式表的样式 获得数值型
+            console.log(box.offsetWidth);
+            // style只能获取行内样式 获得带单位的字符串
+            console.log(box.style.width);
+        </script>
+    </body>
+</html>
