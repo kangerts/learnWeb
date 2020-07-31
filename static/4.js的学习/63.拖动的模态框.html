@@ -99,17 +99,19 @@
             move.addEventListener('mousedown', function (e) {
                 let x = e.pageX;
                 let y = e.pageY;
+
                 function move(e) {
                     login.style.left = e.pageX - x + 'px';
                     login.style.top = e.pageY - y + 'px';
                 }
+
                 // 2）鼠标移动时，把鼠标在页面中的坐标赋值给login的top,left
                 document.addEventListener('mousemove', move);
 
                 document.addEventListener('mouseup', function () {
                     document.removeEventListener('mousemove', move);
-
-            })
+                });
+            });
         </script>
     </body>
 </html>
